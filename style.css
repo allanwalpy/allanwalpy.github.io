@@ -12,10 +12,10 @@
     --main-font-color: #eee;
     --font-color: #333;
     --host-font-color: #2a2;
-    --location-font-color: #22e;
+    --location-font-color: #66e;
     --command-font-color: #aa2;
     --arg-font-color: #a2a;
-    --main-a-font-color: #22a;
+    --main-a-font-color: #66e;
     --main-a-before-font-color: #aaa;
     --main-a-before-hover-font-color: #111;
     --selected-font-color: #333;
@@ -24,7 +24,7 @@
     --header-first-fs: 36pt;
     --header-second-fs: 24pt;
     --header-userpic-author-fs: 10pt;
-    --header-size: 370pt;
+    --header-height: 370pt;
     --main-fs: 20pt;
 }
 
@@ -63,7 +63,7 @@ header {
     padding: 7pt;
     background: var(--header-bg);
     text-align: left;
-    min-height: calc(var(--header-size) - 9pt);
+    min-height: calc(var(--header-height) - 9pt);
     color: var(--header-font-color);
 }
 
@@ -71,7 +71,7 @@ header img {
     position: absolute;
     top: 5pt;
     left: 5pt;
-    height: var(--header-size);
+    height: var(--header-height);
     padding-right: 13pt;
     margin-left: -7pt;
 }
@@ -82,9 +82,9 @@ header a {
 
 header p {
     margin: 0;
-    padding: 5pt;
+    padding: 4pt;
     font-size: var(--header-fs);
-    padding-left: calc(var(--header-size) + 5pt);
+    padding-left: calc(var(--header-height) + 5pt);
 }
 
 header p:nth-child(1) {
@@ -95,7 +95,9 @@ header p:nth-child(2) {
     font-size: var(--header-second-fs);
 }
 
-header p:last-child {
+header p.credits {
+    padding-top: 3pt;
+    padding-bottom: 3pt;
     font-size: var(--header-userpic-author-fs);
 }
 
@@ -165,6 +167,14 @@ main p:first-child .command {
 
 main p:first-child .arg {
     color: var(--arg-font-color);
+}
+
+.command::before {
+    content: "ls";
+}
+
+.arg::before {
+    content: "-al";
 }
 
 /* animation; */
