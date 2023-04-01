@@ -1,50 +1,7 @@
-body {
-    min-width: 500px;
-}
+@media (max-width: 1400px) {
 
-@media (max-width: 1000px) {
-
-:root {
-    --header-width: calc(var(--header-height));
-}
-
-header {
-    padding-bottom: 0;
-    text-align: center;
-}
-
-header img {
-    position: relative;
-    margin-top: 1pt;
-    clear: both;
-    width: 100%;
-    max-width: var(--header-width);
-    height: auto;
-}
-
-header p {
-    padding-left: 5pt;
-    padding-right: 5pt;
-}
-
-main a::before {
-    content: "./";
-}
-
-.command::before {
-    content: "./run"
-}
-
-.arg::before {
-    content: "-i";
-}
-
-}
-
-@media (max-width: 700px) {
-
-header p {
-    text-align: left;
-}
+    header {
+        display: grid;
+    }
 
 }

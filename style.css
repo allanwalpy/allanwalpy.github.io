@@ -1,49 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 :root {
-    --page-bg: #ccc;
-    --header-bg: #ddd;
-    --main-bg: #111;
-    --selected-bg: #eee;
-    --code-tag-bg: rgba(255, 255, 255, 0.3);
-    --code-tag-border-color: #fff;
-    --header-font-color: #333;
-    --header-link-color: #706;
-    --main-font-color: #eee;
-    --font-color: #333;
-    --host-font-color: #2a2;
-    --location-font-color: #66e;
-    --command-font-color: #aa2;
-    --arg-font-color: #a2a;
-    --main-a-font-color: #66e;
-    --main-a-before-font-color: #aaa;
-    --main-a-before-hover-font-color: #111;
-    --selected-font-color: #333;
-    --font-size: 16pt;
-    --header-fs: 14pt;
-    --header-first-fs: 36pt;
-    --header-second-fs: 24pt;
-    --header-userpic-author-fs: 10pt;
-    --header-height: 370pt;
-    --main-fs: 20pt;
-}
-
-a {
-    text-decoration: none;
-}
-
-code {
-    margin: -0.1em 0;
-    padding: 0.1em;
-    background-color: var(--code-tag-bg);
-    border-width: 0.1em;
-    border-style: solid;
-    border-color: var(--code-tag-border-color);
-    border-radius: 0.3em;
-}
-
-s span {
-    display: inline-block;
+    --page-bg: #444;
+    --page-font-size: 16pt;
+    --page-font-color: #333;
+    --window-bg: #111;
+    --window-border-width: 7px;
+    --window-border-style: solid;
+    --window-border-color: #eee;
+    --window-title-bg: #123;
+    --window-title-font-color: #eee;
+    --window-title-font-size: 16pt;
+    --window-title-padding: 5px;
+    --window-title-button-bg: #000;
+    --window-title-button-font-color: #0f0;
+    --window-font-color: #eee;
+    --window-code-bg: #eee;
+    --window-code-font-color: #111;
 }
 
 body {
@@ -53,160 +26,106 @@ body {
     height: 100%;
     overflow: auto;
     background: var(--page-bg);
+    font-size: var(--page-font-size);
+    color: var(--page-font-color);
     font-family: "Roboto Mono", monospace;
-    font-size: var(--font-size);
-    color: var(--font-color);
+}
+
+a {
+    color: #0f0;
+}
+
+.window {
+    display: inline-block;
+    min-width: 600px;
+    border-width: var(--window-border-width);
+    border-style: var(--window-border-style);
+    border-color: var(--window-border-color);
+    background: var(--window-bg);
+    margin: 10px;
+}
+
+.title {
+    display: block;
+    border-width: 0;
+    border-bottom-width: var(--window-border-width);
+    border-style: var(--window-border-style);
+    border-color: var(--window-border-color);
+    background-color: var(--window-title-bg);
+    color: var(--window-title-font-color);
+    font-size: var(--window-title-font-size);
+}
+
+.text {
+    display: inline-block;
+    padding: var(--window-title-padding);
+}
+
+.button {
+    float: right;
+    margin: 0px;
+    width: var(--window-title-font-size);
+    padding: var(--window-title-padding);
+    background: var(--window-title-button-bg);
+    border-width: 0px;
+    border-left-width: var(--window-border-width);
+    border-style: var(--window-border-style);
+    border-color: var(--window-border-color);
+    text-align: center;
+    font-weight: bold;
+    color: var(--window-title-button-font-color);
+}
+
+.button:nth-child(2) {
+    background-color: #f00;
+    color: #fff;
 }
 
 header {
-    margin: 0;
-    padding: 7pt;
-    background: var(--header-bg);
-    text-align: left;
-    min-height: calc(var(--header-height) - 9pt);
-    color: var(--header-font-color);
+    display: flex;
 }
 
-header img {
-    position: absolute;
-    top: 5pt;
-    left: 5pt;
-    height: var(--header-height);
-    padding-right: 13pt;
-    margin-left: -7pt;
+header .window:first-child {
+    width: 600px;
+    padding: 0px;
 }
 
-header a {
-    color: var(--header-link-color);
+header .window:last-child {
+    max-width: 750px;
 }
 
-header p {
-    margin: 0;
-    padding: 4pt;
-    font-size: var(--header-fs);
-    padding-left: calc(var(--header-height) + 5pt);
+header .window:first-child img {
+    display: block;
 }
 
-header p:nth-child(1) {
-    font-size: var(--header-first-fs);
+.content {
+    display: block;
+    padding: 15px;
+    color: var(--window-font-color);
+    counter-reset: line;
 }
 
-header p:nth-child(2) {
-    font-size: var(--header-second-fs);
+.content p:first-child {
+    margin-top: 0px;
+    padding-top: 0px;
 }
 
-header p.credits {
-    padding-top: 3pt;
-    padding-bottom: 3pt;
-    font-size: var(--header-userpic-author-fs);
+code {
+    background-color: var(--window-code-bg);
+    color: var(--window-code-font-color);
+    padding: 3px;
+}
+
+.credits::before,
+.credits::after {
+    content: " ## ";
 }
 
 main {
     display: block;
-    margin: 0;
-    padding: 0;
-    background: var(--main-bg);
-    font-size: var(--main-fs);
-    color: var(--main-font-color);
-    text-align: left;
 }
 
 main a {
     display: block;
-    margin: 0;
-    padding: 10pt;
-    background: var(--main-bg);
-    color: var(--main-a-font-color);
-    font-weight: 600;
-}
-
-main a:hover {
-    background: var(--selected-bg);
-}
-
-main a::before {
-    white-space: pre;
-    content: attr(content-default);
-    color: var(--main-a-before-font-color);
-}
-
-main a:hover::before {
-    color: var(--main-a-before-hover-font-color);
-}
-
-main p:first-child {
-    display: block;
-    margin: 0;
-    padding: 10pt;
-    text-align: left;
-}
-
-main:hover p:first-child {
-    background-color: var(--selected-bg);
-    color: var(--selected-font-color);
-}
-
-main p:first-child::after,
-main a::after {
-    content: "█";
-    opacity: 0;
-}
-
-main p:first-child .host {
-    color: var(--host-font-color);
-    font-weight: 600;
-}
-
-main p:first-child .location {
-    color: var(--location-font-color);
-}
-
-main p:first-child .command {
-    color: var(--command-font-color);
-}
-
-main p:first-child .arg {
-    color: var(--arg-font-color);
-}
-
-.command::before {
-    content: "ls";
-}
-
-.arg::before {
-    content: "-al";
-}
-
-/* animation; */
-
-:root {
-    --selected-animation-delay: 100ms;
-    --selected-animation-duration: 300ms;
-    --blink-animation-delay: 0;
-    --blink-animation-duration: 370ms;
-}
-
-main p,
-main a,
-main a::before {
-    transition: all var(--selected-animation-duration) ease-in-out var(--selected-animation-delay);
-}
-
-@keyframes blink {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-main p:first-child:hover::after,
-main a:hover::after {
-    animation-name: blink;
-    animation-duration: var(--blink-animation-duration);
-    animation-timing-function: ease-in-out;
-    animation-delay: var(--blink-animation-delay);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    padding: 10px;
 }
