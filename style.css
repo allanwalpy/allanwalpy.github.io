@@ -21,6 +21,24 @@
     --border-radius: 10px;
 }
 
+@media (prefers-color-scheme: dark) {
+    :root {
+        --page-bg: #444;
+        --block-bg: #408;
+        --code-bg: #804;
+        --text-color: #eee;
+        --border-color: #eee;
+        --link-color: #8f0;
+        --link-visited-color: #f08;
+        --link-active-color: #eee;
+        --link-active-bg: #080;
+        --code-color: #eee;
+        --link-platform-color: #fff;
+        --link-platform-bg: #a40;
+        --tag-bg: #444;
+    }
+}
+
 body,
 main {
     display: block;
