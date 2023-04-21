@@ -73,15 +73,25 @@ code {
 
 a {
     display: inline;
-    color: #0f0;
+    color: #0c0;
     border-color: transparent;
+    text-decoration: none;
 }
 
 a:visited {
-    color: #f0f;
+    color: #c0c;
 }
 
 a:active {
     color: #eee;
-    background-color: #00f;
+    background-color: #00c;
+}
+
+.block:last-child {
+    font-size: 18pt;
+}
+
+.block:last-child a {
+    display: block;
+    padding: 15px;
 }
