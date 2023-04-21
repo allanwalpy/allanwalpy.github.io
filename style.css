@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
 
+:root {
+    --page-font-size: 14pt;
+    --credits-font-size: 10pt;
+    --emoji-font-size: 22pt;
+    --link-font-size: 16pt;
+}
+
 body,
 main {
     display: block;
@@ -12,32 +19,54 @@ main {
 
 body {
     background: #ccc;
-    font-size: 16pt;
+    font-size: var(--page-font-size);
     color: #111;
     font-family: "Roboto Mono", monospace;
 }
 
 main {
-    display: grid;
-    grid-template-columns: 600px 30% 30%;
+    display: flex;
+    /* grid-template-columns: 600px 30% 30%; */
     background: #fee;
     border-bottom: 1px dashed #111;
+    padding: 10px;
 }
 
 .block {
-    padding: 50px 10px;
+    display: block;
+    padding: 15px;
+    margin: 10px;
+    border: 1px dashed #111;
+    border-radius: 10px;
 }
 
 .block:first-child {
+    width: 600px;
     padding: 0px;
+}
+
+.block:nth-child(2) {
+    min-width: 400px;
+}
+
+.block:nth-child(3) {
+    min-width: 600px;
 }
 
 .block img {
     display: block;
 }
 
+.block p {
+    padding-bottom: 7px;
+}
+
+.block p:last-child {
+    padding-bottom: 0px;
+}
+
 .block p:first-child {
-    display: inline;
+    margin-top: 0px;
 }
 
 /* hilight text */
@@ -50,22 +79,19 @@ a:active {
     border-radius: 10px;
 }
 
-.block:nth-child(2) p:first-child {
-    display: inline;
-}
-
 code {
     background-color: #ff0;
     color: #111;
 }
 
 .tag {
-    background-color: #00d;
-    color: #eee;
+    background-color: #f0f;
+    color: #111;
+    padding: 7px;
 }
 
 .credits {
-    font-size: 12pt;
+    font-size: var(--credits-font-size);
 }
 
 .credits::before {
@@ -80,7 +106,7 @@ a {
 }
 
 a:visited {
-    color: #c0c;
+    color: #f0a;
 }
 
 a:active {
@@ -88,16 +114,20 @@ a:active {
     background-color: #0c0;
 }
 
-.block:last-child a::first-letter {
-    font-size: 22pt;
+.block:nth-child(3) {
+    font-size: var(--link-font-size);
 }
 
-.block:last-child a {
+.block:nth-child(3) a::first-letter {
+    font-size: var(--emoji-font-size);
+}
+
+.block:nth-child(3) a {
     display: block;
     padding: 15px;
 }
 
-.block:last-child code {
+.block:nth-child(3) code {
     background-color: #f80;
     color: #fff;
     padding: 7px;
