@@ -5,7 +5,7 @@
     --username-font-size: 20pt;
     --tag-font-size: 16pt;
     --credits-font-size: 10pt;
-    --emoji-font-size: 22pt;
+    --emoji-font-size: 26pt;
     --link-font-size: 16pt;
     --page-bg: #ffe;
     --block-bg: #fee;
@@ -93,7 +93,7 @@ main {
 }
 
 .block p {
-    padding-bottom: 7px;
+    padding-bottom: 5px;
 }
 
 .block p:last-child {
@@ -166,7 +166,7 @@ a:active {
 
 .block:nth-child(3) a {
     display: block;
-    padding: 15px;
+    padding: 13px;
 }
 
 .block:nth-child(3) code {
