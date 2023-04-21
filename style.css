@@ -60,7 +60,7 @@ code {
 }
 
 .tag {
-    background-color: #00f;
+    background-color: #00d;
     color: #eee;
 }
 
@@ -84,8 +84,8 @@ a:visited {
 }
 
 a:active {
-    color: #eee;
-    background-color: #00c;
+    color: #111;
+    background-color: #0c0;
 }
 
 .block:last-child a::first-letter {
@@ -97,6 +97,8 @@ a:active {
     padding: 15px;
 }
 
-.block .code {
-    background-color: #884;
+.block:last-child code {
+    background-color: #f80;
+    color: #fff;
+    padding: 7px;
 }
