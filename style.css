@@ -5,6 +5,11 @@
     --credits-font-size: 10pt;
     --emoji-font-size: 22pt;
     --link-font-size: 16pt;
+    --page-bg: #ffe;
+    --block-bg: #fee;
+    --text-color: #111;
+    --border-color: #111;
+    --border-radius: 10px;
 }
 
 body,
@@ -18,39 +23,31 @@ main {
 }
 
 body {
-    background: #ccc;
+    background: var(--page-bg);
     font-size: var(--page-font-size);
-    color: #111;
+    color: var(--text-color);
     font-family: "Roboto Mono", monospace;
 }
 
 main {
     display: flex;
-    /* grid-template-columns: 600px 30% 30%; */
-    background: #fee;
-    border-bottom: 1px dashed #111;
-    padding: 10px;
+    flex-wrap: wrap;
+    padding: 0px;
 }
 
 .block {
     display: block;
+    flex-grow: 1;
     padding: 15px;
     margin: 10px;
-    border: 1px dashed #111;
-    border-radius: 10px;
+    border: 1px dashed var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--block-bg);
 }
 
 .block:first-child {
-    width: 600px;
+    flex-grow: 0;
     padding: 0px;
-}
-
-.block:nth-child(2) {
-    min-width: 400px;
-}
-
-.block:nth-child(3) {
-    min-width: 600px;
 }
 
 .block img {
@@ -72,11 +69,10 @@ main {
 /* hilight text */
 .tag,
 code,
-a,
-a:active {
+a {
     padding: 3px;
-    border: 1px dashed #111;
-    border-radius: 10px;
+    border: 1px dashed var(--border-color);
+    border-radius: var(--border-radius);
 }
 
 code {
@@ -85,8 +81,7 @@ code {
 }
 
 .tag {
-    background-color: #f0f;
-    color: #111;
+    background-color: #ffe;
     padding: 7px;
 }
 
@@ -112,6 +107,7 @@ a:visited {
 a:active {
     color: #111;
     background-color: #0c0;
+    border-color: var(--border-color);
 }
 
 .block:nth-child(3) {
