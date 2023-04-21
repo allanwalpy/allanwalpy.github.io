@@ -2,6 +2,8 @@
 
 :root {
     --page-font-size: 14pt;
+    --username-font-size: 20pt;
+    --tag-font-size: 16pt;
     --credits-font-size: 10pt;
     --emoji-font-size: 22pt;
     --link-font-size: 16pt;
@@ -91,6 +93,14 @@ main {
 
 .block p:first-child {
     margin-top: 0px;
+}
+
+.block:nth-child(2) p:first-child {
+    font-size: var(--username-font-size);
+}
+
+.block:nth-child(2) p:nth-child(2) {
+    font-size: var(--tag-font-size);
 }
 
 /* hilight text */
