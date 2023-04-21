@@ -11,7 +11,7 @@ main {
 }
 
 body {
-    background: #ddd;
+    background: #ccc;
     font-size: 16pt;
     color: #111;
     font-family: "Roboto Mono", monospace;
@@ -20,7 +20,8 @@ body {
 main {
     display: grid;
     grid-template-columns: 600px 30% 30%;
-    background: #eee;
+    background: #fee;
+    border-bottom: 1px dashed #111;
 }
 
 .block {
@@ -87,11 +88,15 @@ a:active {
     background-color: #00c;
 }
 
-.block:last-child {
-    font-size: 18pt;
+.block:last-child a::first-letter {
+    font-size: 22pt;
 }
 
 .block:last-child a {
     display: block;
     padding: 15px;
+}
+
+.block .code {
+    background-color: #884;
 }
