@@ -40,7 +40,7 @@ main {
 }
 
 /* hilight text */
-.block:nth-child(2) p:first-child,
+.tag,
 code,
 a,
 a:active {
@@ -51,13 +51,16 @@ a:active {
 
 .block:nth-child(2) p:first-child {
     display: inline;
+}
+
+code {
     background-color: #ff0;
     color: #111;
 }
 
-code {
-    background-color: #f0f;
-    color: #111;
+.tag {
+    background-color: #00f;
+    color: #eee;
 }
 
 .credits {
