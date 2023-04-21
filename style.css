@@ -61,6 +61,7 @@ body {
 main {
     display: flex;
     flex-wrap: wrap;
+    min-width: 430px;
     padding: 0px;
 }
 
@@ -74,9 +75,17 @@ main {
     background-color: var(--block-bg);
 }
 
-.block:first-child {
+.block:nth-child(1) {
     flex-grow: 0;
     padding: 0px;
+}
+
+.block:nth-child(2) {
+    min-width: 300px;
+}
+
+.block:nth-child(3) {
+    min-width: 370px;
 }
 
 .block img {
@@ -91,11 +100,11 @@ main {
     padding-bottom: 0px;
 }
 
-.block p:first-child {
+.block p:nth-child(1) {
     margin-top: 0px;
 }
 
-.block:nth-child(2) p:first-child {
+.block:nth-child(2) p:nth-child(1) {
     font-size: var(--username-font-size);
 }
 
@@ -164,4 +173,34 @@ a:active {
     background-color: var(--link-platform-bg);
     color: var(--link-platform-color);
     padding: 7px;
+}
+
+@media (max-width: 650px) {
+    .block:nth-child(1) img {
+        width: 95%;
+    }
+}
+
+@media (max-width: 620px) {
+    :root {
+        --page-font-size: 12pt;
+        --username-font-size: 18pt;
+        --tag-font-size: 14pt;
+        --credits-font-size: 8pt;
+        --emoji-font-size: 20pt;
+        --link-font-size: 12pt;
+        --border-radius: 7px;
+    }
+}
+
+@media (max-width: 520px) {
+    :root {
+        --page-font-size: 12pt;
+        --username-font-size: 16pt;
+        --tag-font-size: 14pt;
+        --credits-font-size: 8pt;
+        --emoji-font-size: 16pt;
+        --link-font-size: 10pt;
+        --border-radius: 5px;
+    }
 }
