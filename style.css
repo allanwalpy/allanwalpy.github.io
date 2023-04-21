@@ -7,8 +7,17 @@
     --link-font-size: 16pt;
     --page-bg: #ffe;
     --block-bg: #fee;
+    --code-bg: #ff0;
     --text-color: #111;
     --border-color: #111;
+    --link-color: #0c0;
+    --link-visited-color: #f0a;
+    --link-active-color: #111;
+    --link-active-bg: #0c0;
+    --code-color: #111;
+    --link-platform-color: #fff;
+    --link-platform-bg: #f80;
+    --tag-bg: #ffe;
     --border-radius: 10px;
 }
 
@@ -76,12 +85,12 @@ a {
 }
 
 code {
-    background-color: #ff0;
-    color: #111;
+    background-color: var(--code-bg);
+    color: var(--code-color);
 }
 
 .tag {
-    background-color: #ffe;
+    background-color: var(--tag-bg);
     padding: 7px;
 }
 
@@ -95,18 +104,18 @@ code {
 
 a {
     display: inline;
-    color: #0c0;
+    color: var(--link-color);
     border-color: transparent;
     text-decoration: none;
 }
 
 a:visited {
-    color: #f0a;
+    color: var(--link-visited-color);
 }
 
 a:active {
-    color: #111;
-    background-color: #0c0;
+    color: var(--link-active-color);
+    background-color: var(--link-active-bg);
     border-color: var(--border-color);
 }
 
@@ -124,7 +133,7 @@ a:active {
 }
 
 .block:nth-child(3) code {
-    background-color: #f80;
-    color: #fff;
+    background-color: var(--link-platform-bg);
+    color: var(--link-platform-color);
     padding: 7px;
 }
