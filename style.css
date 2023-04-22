@@ -8,8 +8,8 @@
     --emoji-font-size: 26pt;
     --link-font-size: 16pt;
     --page-bg: #ffe;
-    --block-bg: #fee;
-    --code-bg: #ff0;
+    --block-bg: #dee;
+    --code-bg: #deb;
     --text-color: #111;
     --border-color: #111;
     --link-color: #0c0;
@@ -17,7 +17,7 @@
     --link-active-color: #111;
     --link-active-bg: #0c0;
     --code-color: #111;
-    --link-platform-color: #fff;
+    --link-platform-color: #eee;
     --link-platform-bg: #f80;
     --tag-bg: #ffe;
     --border-radius: 10px;
@@ -112,7 +112,6 @@ main {
     font-size: var(--tag-font-size);
 }
 
-/* hilight text */
 .tag,
 code,
 a {
