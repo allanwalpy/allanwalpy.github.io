@@ -1,9 +1,16 @@
 #!/bin/bash
 
-##echo -e "\n\n -- copying files on android -- \n\n" && \
-##adb push ./index.html /sdcard/Download/tmp/webview/index.html && \
-##adb push ./style.css /sdcard/Download/tmp/webview/style.css && \
-##adb push ./user.png /sdcard/Download/tmp/webview/user.png && \
-##adb push ./icon.ico /sdcard/Download/tmp/webview/icon.ico && \
+echo -e "\n\n -- copying files on android -- \n\n" && \
+adb push ./index.html /sdcard/Download/webview/index.html && \
+adb push ./style.css /sdcard/Download/webview/style.css && \
+adb push ./user.png /sdcard/Download/webview/user.png && \
+adb push ./icon.ico /sdcard/Download/webview/icon.ico && \
+echo -e "\n\n -- giving permissions to copied files -- \n\n" && \
+adb shell chmod 777 /sdcard/Download/webview/index.html && \
+adb shell chmod 777 /sdcard/Download/webview/style.css && \
+adb shell chmod 777 /sdcard/Download/webview/user.png && \
+adb shell chmod 777 /sdcard/Download/webview/icon.ico && \
 echo -e "\n\n -- launching page view -- \n\n" && \
-adb shell am start -a android.intent.action.VIEW -d "/sdcard/Download/tmp/webview/index.html" -t "text/html"
+adb shell am start -n com.android.chrome/com.google.android.apps.chrome.Main -a android.intent.action.VIEW -t text/html -d "file:///sdcard/Download/webview/index.html"
+
+## nb! `adb shell chmod +x 777` commands may be a security breach;
