@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo -e "\n\n -- copying files on android -- \n\n" && \
+adb push ./index.html /sdcard/debug/index.html && \
+adb push ./style.css /sdcard/debug/style.css && \
+adb push ./user.png /sdcard/debug/user.png && \
+adb push ./icon.ico /sdcard/debug/icon.ico && \
+echo -e "\n\n -- launching page view -- \n\n" && \
+adb shell am start -a android.intent.action.VIEW -d "content://com.google.android.apps.nbu.files.provider/1/file%3A%2F%2F%2Fstorage%2Femulated%2F0%2Fdebug%2Findex.html"
+
+##  start --user 0 -a android.intent.action.VIEW -d file:///data/local/tmp/file.txt -t text/plain
+
+## file:///storage/emulated/0/debug/index.html
