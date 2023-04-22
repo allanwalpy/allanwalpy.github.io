@@ -1,10 +1,10 @@
 #!/bin/bash
 
 echo -e "\n\n -- copying files on android -- \n\n" && \
-adb push ./index.html /data/local/tmp/index.html && \
-adb push ./style.css /data/local/tmp/style.css && \
-adb push ./user.png /data/local/tmp/user.png && \
-adb push ./icon.ico /data/local/tmp/icon.ico && \
+adb shell mkdir -p /data/local/tmp/debughtml/ && \
+adb push ./index.html /data/local/tmp/debughtml/index.html && \
+adb push ./style.css /data/local/tmp/debughtml/style.css && \
+adb push ./user.png /data/local/tmp/debughtml/user.png && \
+adb push ./icon.ico /data/local/tmp/debughtml/icon.ico && \
 echo -e "\n\n -- launching page view -- \n\n" && \
-adb shell chmod +r /data/local/tmp/index.html && \
-adb shell am start -a android.intent.action.VIEW -n org.mozilla.firefox/org.mozilla.gecko.BrowserApp -t text/html -d file:///data/local/tmp/index.html
+adb shell am start -a android.intent.action.VIEW -t "text/html" -c android.intent.category.DEFAULT -d "content://com.google.android.apps.nbu.files.provider/external_files/files%3A%2F%2F%2Fstorage%2Femulated%2F0%2FDownload%2Fwebview%2Findex.html" -n com.android.chrome/com.google.android.apps.chrome.Main
