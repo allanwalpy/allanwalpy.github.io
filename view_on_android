@@ -6,6 +6,6 @@ adb push ./style.css /storage/emulated/0/Download/webview/style.css && \
 adb push ./user.png /storage/emulated/0/Download/webview/user.png && \
 adb push ./icon.ico /storage/emulated/0/Download/webview/icon.ico && \
 echo -e "\n\n -- launching page view -- \n\n" && \
-adb shell "am start -a android.intent.action.VIEW -t \"text/html\" -c android.intent.category.DEFAULT -d \"content://com.google.android.apps.nbu.files.provider/1/file%3A%2F%2F%2Fstorage%2Femulated%2F0%2FDownload%2Fwebview%2Findex.html\" -n \"com.android.chrome/com.google.android.apps.chrome.Main\" -e \"css\" \"file:///storage/emulated/0/Download/style.css\""
+adb shell "am start -a android.intent.action.VIEW -t \"text/html\" -c android.intent.category.DEFAULT -d \"content://com.google.android.apps.nbu.files.provider/1/file%3A%2F%2F%2Fstorage%2Femulated%2F0%2FDownload%2Fwebview%2Findex.html\" -n \"com.android.chrome/com.google.android.apps.chrome.Main\" --activity-clear-top -e \"css\" \"file:///storage/emulated/0/Download/style.css\""
 
 ## adb shell am start -a android.intent.action.VIEW -t "text/html" -c android.intent.category.DEFAULT -d "content://com.google.android.apps.nbu.files.provider/external_files/%2Fstorage%2Femulated%2F0%2FDownload%2Fwebview%2Findex.html" -n com.android.chrome/com.google.android.apps.chrome.Main
