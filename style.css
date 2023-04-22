@@ -143,6 +143,7 @@ a {
     color: var(--link-color);
     border-color: transparent;
     text-decoration: none;
+    background-color: inherit;
 }
 
 a:visited {
@@ -203,4 +204,15 @@ a:hover {
         --link-font-size: 10pt;
         --border-radius: 5px;
     }
+}
+
+/* animation */
+
+:root {
+    --animation-delay: 50ms;
+    --animation-duration: 150ms;
+}
+
+a {
+    transition: all var(--animation-duration) ease-in-out var(--animation-delay);
 }
