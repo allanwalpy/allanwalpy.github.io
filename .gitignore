@@ -1,0 +1,9 @@
+# confidential and temporary files
+*.hide
+*.hide.*
+*-hide
+*-hide-*
+*.secret
+*.secret.*
+*-secret
+*-secret-*
