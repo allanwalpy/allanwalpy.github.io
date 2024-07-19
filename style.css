@@ -1,216 +1,145 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
-
 :root {
-    --page-font-size: 14pt;
-    --username-font-size: 20pt;
-    --tag-font-size: 16pt;
-    --credits-font-size: 10pt;
-    --emoji-font-size: 26pt;
-    --link-font-size: 16pt;
-    --page-bg: #ffd;
-    --block-bg: #fed;
-    --code-bg: #efe;
-    --text-color: #000;
-    --border-color: #000;
-    --link-color: #0a0;
-    --link-visited-color: #d0a;
-    --link-active-color: #fff;
-    --link-active-bg: #0a0;
-    --code-color: #000;
-    --link-platform-color: #fff;
-    --link-platform-bg: #e80;
-    --tag-bg: #ffd;
-    --border-radius: 10px;
-}
+    --page-background-color: #dddddd;
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --page-bg: #111;
-        --block-bg: #222;
-        --code-bg: #080;
-        --text-color: #fff;
-        --border-color: #fff;
-        --link-color: #af8;
-        --link-visited-color: #f8a;
-        --link-active-color: #000;
-        --link-active-bg: #cfa;
-        --code-color: #fff;
-        --link-platform-color: #fff;
-        --link-platform-bg: #e80;
-        --tag-bg: #111;
-    }
-}
+    --font-family: sans-serif;
+    --font-size: 16pt;
+    --font-color: #222222;
 
-body,
-main {
-    display: block;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
+    --link-color-default: #0022aa;
+    --link-color-visited: #aa0044;
+    --link-color-active: #006600;
+
+    --code-background-color: #ffccff;
+    --code-font-family: monospace;
+    --code-font-color: #000000;
+    --code-background-color-hover: #ccffcc;
+
+    --window-background: #ffffdd;
+
+    --window-title-font-size: 18pt;
 }
 
 body {
-    background: var(--page-bg);
-    font-size: var(--page-font-size);
-    color: var(--text-color);
-    font-family: "Roboto Mono", monospace;
+    display: block;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: var(--page-background-color);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    color: var(--font-color);
 }
 
 main {
-    display: flex;
+    display: block flex;
     flex-wrap: wrap;
-    min-width: 430px;
+    min-width: 512px;
+    width: 98%;
+    height: 100%;
+    margin: 0;
+    padding: 1%;
+    justify-content: space-around;
+}
+
+.window {
+    display: block;
+    padding: 0px;
+    margin: 25px;
+    width: fit-content;
+    height: fit-content;
+
+    border: 3px solid #222222;
+    background-color: var(--window-background);
+}
+
+.window img {
+    display: block;
+    margin: 0px;
     padding: 0px;
 }
 
-.block {
+figcaption {
+    margin: 0px;
+    padding: 5px 0px;
+    background-color: #222222;
+    color: #88ffaa;
+    font-size: var(--window-title-font-size);
+    font-weight: bold;
+    font-family: monospace;
+}
+
+figcaption::before {
+    content: "> ";
+    color: #ff88aa;
+}
+
+figcaption::after {
+    content: " _";
+    color: #ffffff;
+}
+
+.window:hover figcaption::after {
+    content: " █";
+}
+
+.window_controls_close,
+.window_controls_info {
+    margin: 0px 3px;
+    padding: 0px 5px;
+    float: right;
+    color: #ffffff;
+}
+
+.window_controls_close {
+    background-color: #ff4444;
+}
+
+.window_controls_info {
+    background-color: #4444ff;
+}
+
+p {
     display: block;
-    flex-grow: 1;
-    padding: 15px;
-    margin: 10px;
-    border: 1px dashed var(--border-color);
-    border-radius: var(--border-radius);
-    background-color: var(--block-bg);
-}
-
-.block:nth-child(1) {
-    flex-grow: 0;
-    padding: 0px;
-}
-
-.block:nth-child(2) {
-    min-width: 300px;
-}
-
-.block:nth-child(3) {
-    min-width: 370px;
-}
-
-.block img {
-    display: block;
-}
-
-.block p {
-    padding-bottom: 5px;
-}
-
-.block p:last-child {
-    padding-bottom: 0px;
-}
-
-.block p:nth-child(1) {
-    margin-top: 0px;
-}
-
-.block:nth-child(2) p:nth-child(1) {
-    font-size: var(--username-font-size);
-}
-
-.block:nth-child(2) p:nth-child(2) {
-    font-size: var(--tag-font-size);
-}
-
-.tag,
-code,
-a {
-    padding: 3px;
-    border: 1px dashed var(--border-color);
-    border-radius: var(--border-radius);
-}
-
-code {
-    background-color: var(--code-bg);
-    color: var(--code-color);
-}
-
-.tag {
-    background-color: var(--tag-bg);
-    padding: 7px;
-}
-
-.credits {
-    font-size: var(--credits-font-size);
-}
-
-.credits::before {
-    content: "# ";
+    margin: 0px;
+    padding: 5px;
 }
 
 a {
-    display: inline;
-    color: var(--link-color);
-    border-color: transparent;
-    text-decoration: none;
-    background-color: inherit;
+    color: var(--link-color-default);
+    text-decoration: underline;
 }
 
 a:visited {
-    color: var(--link-visited-color);
+    color: var(--link-color-visited);
 }
 
 a:active,
 a:hover {
-    color: var(--link-active-color);
-    background-color: var(--link-active-bg);
-    border-color: var(--border-color);
+    color: var(--link-color-active);
 }
 
-.block:nth-child(3) {
-    font-size: var(--link-font-size);
+code {
+    margin: 0px 1px;
+    padding: 1px 3px;
+    background-color: var(--code-background-color);
+    font-family: var(--code-font-family);
+    color: var(--code-font-color);
+    border: 1px dotted #000000;
 }
 
-.block:nth-child(3) a::first-letter {
-    font-size: var(--emoji-font-size);
-}
-
-.block:nth-child(3) a {
-    display: block;
-    padding: 13px;
-}
-
-.block:nth-child(3) code {
-    background-color: var(--link-platform-bg);
-    color: var(--link-platform-color);
-    padding: 7px;
-}
-
-@media (max-width: 650px) {
-    .block:nth-child(1) img {
-        width: 95%;
-    }
-}
-
-@media (max-width: 620px) {
-    :root {
-        --page-font-size: 12pt;
-        --username-font-size: 18pt;
-        --tag-font-size: 14pt;
-        --credits-font-size: 8pt;
-        --emoji-font-size: 20pt;
-        --link-font-size: 12pt;
-        --border-radius: 7px;
-    }
-}
-
-@media (max-width: 520px) {
-    :root {
-        --page-font-size: 12pt;
-        --username-font-size: 16pt;
-        --tag-font-size: 14pt;
-        --credits-font-size: 8pt;
-        --emoji-font-size: 16pt;
-        --link-font-size: 10pt;
-        --border-radius: 5px;
-    }
+code:hover,
+code:active {
+    background-color: var(--code-background-color-hover);
+    border-style: solid;
 }
 
 /* animation */
 
 :root {
-    --animation-delay: 50ms;
-    --animation-duration: 200ms;
+    --animation-delay: 0ms;
+    --animation-duration: 250ms;
 }
 
 a {
